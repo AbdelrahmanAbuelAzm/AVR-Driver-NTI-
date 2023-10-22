@@ -45,11 +45,11 @@ const DIO_PinStatus_type DIO_PinsStatusArr[TOTAL_PINS]={
 	OUTPUT,		 /* Port D Pin 0 */
 	OUTPUT,		 /* Port D Pin 1 */
     OUTPUT,      /* Port D Pin 2 /INT0*/
-	OUTPUT,      /* Port D Pin 3 / INT1 */
-	OUTPUT,		 /* Port D Pin 4  OC1B*/
-	OUTPUT,		 /* Port D Pin 5 OC1A*/
-	OUTPUT,		 /* Port D Pin 6 /   ICP*/
-	OUTPUT		 /* Port D Pin 7 */
+	INPULL,      /* Port D Pin 3 / INT1 */
+	INPULL,		 /* Port D Pin 4  OC1B*/
+	INPULL,		 /* Port D Pin 5 OC1A*/
+	INPULL,		 /* Port D Pin 6 /   ICP*/
+	INPULL		 /* Port D Pin 7 */
 };
 
 

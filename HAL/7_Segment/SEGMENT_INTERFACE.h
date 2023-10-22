@@ -10,6 +10,8 @@
 #define SEGMENT_INTERFACE_H_
 
 void Segment_Display(u16 num);
+void Segment_Display_2digit_Left(u16 num);
+void Segment_Display_2digit_Right(u16 num);
 
 
 typedef union{

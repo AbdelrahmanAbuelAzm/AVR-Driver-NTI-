@@ -4,6 +4,10 @@
 
 HAL\7_Segment\7_SEGMENT.c
 
+HAL\KeyBad\KEYBAD.c
+
+HAL\LCD\LCD.c
+
 main.c
 
 MCAL\DIO\DIO_Program.c

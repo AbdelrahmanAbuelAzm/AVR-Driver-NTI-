@@ -68,6 +68,8 @@
       <Value>../MCAL/DIO</Value>
       <Value>..</Value>
       <Value>../HAL/7_Segment</Value>
+      <Value>../HAL/LCD</Value>
+      <Value>../HAL/KeyBad</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -134,6 +136,24 @@
     <Compile Include="HAL\7_Segment\7_SEGMENT.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\KeyBad\KEYBAD.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\KeyBad\KEYBAD_CONFIG.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\KeyBad\KEYBAD_INTERFACE.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\LCD\LCD.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\LCD\LCD_CONFIG.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\LCD\LCD_INTERFACE.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
@@ -161,6 +181,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HAL\7_Segment" />
+    <Folder Include="HAL\LCD" />
+    <Folder Include="HAL\KeyBad" />
     <Folder Include="MCAL" />
     <Folder Include="HAL" />
     <Folder Include="APP" />
