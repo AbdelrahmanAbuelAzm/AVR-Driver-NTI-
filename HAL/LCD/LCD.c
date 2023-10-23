@@ -7,6 +7,7 @@
 
 #include "STD_TYPES.h"
 #include "UTILIS.h"
+#include "MEM_MAP.h"
 #include "LCD_CONFIG.h"
 #include "LCD_INTERFACE.h"
 #include "DIO_Interface.h"

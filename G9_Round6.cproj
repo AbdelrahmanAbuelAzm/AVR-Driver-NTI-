@@ -70,6 +70,7 @@
       <Value>../HAL/7_Segment</Value>
       <Value>../HAL/LCD</Value>
       <Value>../HAL/KeyBad</Value>
+      <Value>../MCAL/EX_Inturrupt</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -108,6 +109,20 @@
         <avrgcc.compiler.directories.IncludePaths>
           <ListValues>
             <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
+            <Value>../APP</Value>
+            <Value>../HAL</Value>
+            <Value>../LIB</Value>
+            <Value>../MCAL</Value>
+            <Value>../SERVICE</Value>
+            <Value>../vsix</Value>
+            <Value>..</Value>
+            <Value>../Release</Value>
+            <Value>../Release/HAL/7_Segment</Value>
+            <Value>../HAL/KeyBad</Value>
+            <Value>../HAL/LCD</Value>
+            <Value>../MCAL/DIO</Value>
+            <Value>../MCAL/EX_Inturrupt</Value>
+            <Value>../HAL/7_Segment</Value>
           </ListValues>
         </avrgcc.compiler.directories.IncludePaths>
         <avrgcc.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcc.compiler.optimization.level>
@@ -169,6 +184,15 @@
     <Compile Include="MCAL\DIO\DIO_Program.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\EX_Inturrupt\EX_Intruupt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EX_Inturrupt\EX_INTRUUPT_INTERFACE.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EX_Inturrupt\EX_INTURRUPT_CONFIG.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MEM_MAP.h">
       <SubType>compile</SubType>
     </Compile>
@@ -188,6 +212,7 @@
     <Folder Include="APP" />
     <Folder Include="LIB" />
     <Folder Include="MCAL\DIO" />
+    <Folder Include="MCAL\EX_Inturrupt" />
     <Folder Include="SERVICE" />
     <Folder Include="vsix\" />
   </ItemGroup>

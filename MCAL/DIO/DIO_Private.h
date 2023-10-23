@@ -9,8 +9,9 @@
 #ifndef DIO_PRIVATE_H_
 #define DIO_PRIVATE_H_
 
+/*
 
-/* DIO_Registers */
+/ * DIO_Registers * /
 #define DDRA (*(volatile unsigned char*)0x3A)
 #define DDRB (*(volatile unsigned char*)0x37)
 #define DDRC (*(volatile unsigned char*)0x34)
@@ -25,7 +26,7 @@
 #define PORTB (*(volatile unsigned char*)0x38)
 #define PORTC (*(volatile unsigned char*)0x35)
 #define PORTD (*(volatile unsigned char*)0x32)
-/********************************************************************************************************/
+/ ******************************************************************************************************** /*/
 
 extern const DIO_PinStatus_type DIO_PinsStatusArr[TOTAL_PINS];
 

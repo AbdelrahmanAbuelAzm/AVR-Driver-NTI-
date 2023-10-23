@@ -12,6 +12,7 @@
 #include "DIO_Interface.h"
 #include "KEYBAD_INTERFACE.h"
 #include "UTILIS.h"
+#include "MEM_MAP.h"
 #include "KEYBAD_CONFIG.h"
 
 
