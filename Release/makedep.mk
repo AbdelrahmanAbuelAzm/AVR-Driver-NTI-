@@ -10,6 +10,8 @@ HAL\LCD\LCD.c
 
 main.c
 
+MCAL\ADC\ADC.c
+
 MCAL\DIO\DIO_Program.c
 
 MCAL\EX_Inturrupt\EX_Intruupt.c

@@ -46,9 +46,9 @@ void vector (void)*/
 #define ADPS0 0
 #define ADPS1 1
 #define ADPS2 2
-#define ADIE  3
-#define ADIF  4
-#define ADATE 5
+#define ADIE  3   // Interrupt enable
+#define ADIF  4   //interrupt flag
+#define ADATE 5 // auto trigger select
 #define ADSC  6
 #define ADEN  7
 
@@ -126,6 +126,13 @@ void vector (void)*/
 #define TCCR1A        (*(volatile unsigned char*)0x4F)
 
 #define SFIOR       (*(volatile unsigned char*)0x50)
+#define PSR10 0
+#define PSR2  1
+#define PUD   2
+#define ACME   3
+#define ADTS0 5
+#define ADTS1 6
+#define ADTS2 7
 
 #define OSCCAL       (*(volatile unsigned char*)0x51)
 /******************************************************************************/

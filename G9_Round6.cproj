@@ -71,6 +71,7 @@
       <Value>../HAL/LCD</Value>
       <Value>../HAL/KeyBad</Value>
       <Value>../MCAL/EX_Inturrupt</Value>
+      <Value>../MCAL/ADC</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -172,6 +173,12 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\ADC\ADC.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\ADC\ADC_INTERFACE.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MCAL\DIO\DIO_Config.h">
       <SubType>compile</SubType>
     </Compile>
@@ -213,6 +220,7 @@
     <Folder Include="LIB" />
     <Folder Include="MCAL\DIO" />
     <Folder Include="MCAL\EX_Inturrupt" />
+    <Folder Include="MCAL\ADC" />
     <Folder Include="SERVICE" />
     <Folder Include="vsix\" />
   </ItemGroup>

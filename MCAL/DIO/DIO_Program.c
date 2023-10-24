@@ -19,7 +19,7 @@
 
 
 const DIO_PinStatus_type DIO_PinsStatusArr[TOTAL_PINS]={
-	OUTPUT,      /* Port A Pin 0 ADC0*/
+	INFREE,      /* Port A Pin 0 ADC0*/
 	OUTPUT,      /* Port A Pin 1 ADC1*/
 	OUTPUT,      /* Port A Pin 2 */
 	OUTPUT,      /* Port A Pin 3 */
@@ -45,7 +45,7 @@ const DIO_PinStatus_type DIO_PinsStatusArr[TOTAL_PINS]={
 	OUTPUT,		 /* Port C Pin 7 */
 	OUTPUT,		 /* Port D Pin 0 */
 	OUTPUT,		 /* Port D Pin 1 */
-    OUTPUT,      /* Port D Pin 2 /INT0*/
+    INFREE,      /* Port D Pin 2 /INT0*/
 	INPULL,      /* Port D Pin 3 / INT1 */
 	INPULL,		 /* Port D Pin 4  OC1B*/
 	INPULL,		 /* Port D Pin 5 OC1A*/

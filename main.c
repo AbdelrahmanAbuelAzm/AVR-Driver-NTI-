@@ -17,8 +17,9 @@
 #include "KEYBAD_INTERFACE.h"
 #include "KEYBAD_CONFIG.h"
 #include "EX_INTRUUPT_INTERFACE.h"
+#include "ADC_INTERFACE.h"
 
-volatile u8 EXInt_Flag=0,LCD_flag=0;
+volatile u8 ADC_Flag=0;
 
 int main(void)
 {
@@ -27,75 +28,35 @@ int main(void)
 	u8 key='T';
 	DIO_Init();
 	LCD_Init();
-	KEKPAD_Init();
-	//EXI_Init();
+	//KEKPAD_Init();
 	
-	EXI_TriggerEdge(EX_INT1,RISING_EDGE);
-	EXI_Enable(EX_INT1);
+	ADC_Init(VREF_AVCC,ADC_SCALER_64);
+	ADC_Auto_Triggered_Init(ADC_EXTERNAL_INTERRUPT0,CH_0);
+	
+	EXI_TriggerEdge(EX_INT0,RISING_EDGE);
+	EXI_Enable(EX_INT0);
 	GLOBAL_ENABLE();
 	
 	LCD_GoTo(0,0);
-	LCD_WriteString("EX Interrupt");
+	LCD_WriteString("ADC Interrupt");
 	LCD_GoTo(1,0);
 	
     u16 num=0,disp_num=0;;
+	//ADC_StartConversion(CH_1);
+	
 	
     while (1) 
     {
 		
-		if(LCD_flag==1)
+		if(ADC_Flag==1)
 		{
-			if(EXInt_Flag == 1 )
-			{
-				LCD_WriteNumber3(EXInt_Flag);
-				LCD_flag=0;
-			}
-			else if(EXInt_Flag == 2  )
-			{
-				LCD_WriteNumber3(EXInt_Flag);
-				LCD_flag=0;
-			}
-			else if(EXInt_Flag == 3  )
-			{
-				LCD_WriteNumber3(EXInt_Flag);
-				LCD_flag=0;
-			}
-			else if(EXInt_Flag == 4)
-			{
-				LCD_WriteNumber3(EXInt_Flag);
-				LCD_flag=0;
-			}
-			else if(EXInt_Flag == 5)
-			{
-				LCD_WriteNumber3(EXInt_Flag);
-				LCD_flag=0;
-			}
-			else if(EXInt_Flag == 6)
-			{
-				LCD_WriteNumber3(EXInt_Flag);
-				LCD_flag=0;
-			}
-			else if(EXInt_Flag == 7)
-			{
-				LCD_WriteNumber3(EXInt_Flag);
-				LCD_flag=0;
-			}
-			else if(EXInt_Flag == 8)
-			{
-				LCD_WriteNumber3(EXInt_Flag);
-				LCD_flag=0;
-			}
-			else if(EXInt_Flag == 9)
-			{
-				LCD_WriteNumber3(EXInt_Flag);
-				LCD_flag=0;
-			}
-			else if(EXInt_Flag == 10)
-			{
-				LCD_WriteNumber3(EXInt_Flag);
-				LCD_flag=0;
-			}
+			LCD_WriteNumber(ADC_Read(CH_0));
+			LCD_WriteString("in");
+			ADC_Flag=0;
 		}
+		
+		
+		//delay(20);
 		
 		
 				/*key=KEYPAD_GetKey();
@@ -140,19 +101,15 @@ int main(void)
     }
 
 
-ISR(INT1_vect)
+ISR(ADC_vect)
 {
-	if(LCD_flag==0)
-	{
-		EXInt_Flag++;
-	}
 	
+		ADC_Flag=1;
+		
+}
+ISR(INT0_vect)
+{
 	
-	if(EXInt_Flag==11)
-	{
-		EXInt_Flag=1;
-	}
-	delay(50);
-	LCD_flag=1;
+	DIO_TogglePin(PINB7);
 	
 }
