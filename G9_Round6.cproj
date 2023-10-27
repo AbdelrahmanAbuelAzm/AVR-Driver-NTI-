@@ -72,6 +72,7 @@
       <Value>../HAL/KeyBad</Value>
       <Value>../MCAL/EX_Inturrupt</Value>
       <Value>../MCAL/ADC</Value>
+      <Value>../MCAL/TIMER</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -200,6 +201,18 @@
     <Compile Include="MCAL\EX_Inturrupt\EX_INTURRUPT_CONFIG.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\TIMER\TIMER.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\TIMER\TIMER_INTERFAC.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\TIMER\TIMER_SERVICE.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\TIMER\TIMER_SERVICE.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MEM_MAP.h">
       <SubType>compile</SubType>
     </Compile>
@@ -221,6 +234,7 @@
     <Folder Include="MCAL\DIO" />
     <Folder Include="MCAL\EX_Inturrupt" />
     <Folder Include="MCAL\ADC" />
+    <Folder Include="MCAL\TIMER" />
     <Folder Include="SERVICE" />
     <Folder Include="vsix\" />
   </ItemGroup>

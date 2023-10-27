@@ -74,6 +74,7 @@ void ADC_Auto_Triggered_Init(ADC_AutoTriggered_type Selected_Mode,ADC_Channel_ty
 		CLR_BIT(SFIOR,ADTS0);
 		CLR_BIT(SFIOR,ADTS1);
 		CLR_BIT(SFIOR,ADTS2);
+		SET_BIT(ADCSRA,ADSC);    // Start conversion at first time only 
 		break;
 		
 		case ADC_Analog_Comparator:
@@ -120,8 +121,16 @@ void ADC_Auto_Triggered_Init(ADC_AutoTriggered_type Selected_Mode,ADC_Channel_ty
 		
 	}
 	
-	SET_BIT(ADCSRA,ADSC);
+	//SET_BIT(ADCSRA,ADSC);
 	
+}
+
+void ADC_Channel_Selection(ADC_Channel_type CH)
+{
+	// set channel mux
+	ADMUX&=0xE0; // clear 5 bits of mul input
+	CH&=0x1F; //take first 5 bits of ch number
+	ADMUX=ADMUX|CH;  //put the value of ch in the 5 bits
 }
 
 u16 ADC_Read(ADC_Channel_type CH)

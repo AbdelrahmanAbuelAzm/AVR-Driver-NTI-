@@ -53,6 +53,7 @@ typedef enum{
 void ADC_Init(ADC_VoltRef_type vref,ADC_Prescaler_type scaler);
 void ADC_Auto_Triggered_Init(ADC_AutoTriggered_type Selected_Mode,ADC_Channel_type CH);
 u16 ADC_StartConversion(ADC_Channel_type CH);
+void ADC_Channel_Selection(ADC_Channel_type CH);
 u16 ADC_GetRead(ADC_Channel_type CH);
 u16 ADC_Read(ADC_Channel_type CH);
 u8 ADC_GetReadPeriodic(u16*pdata);

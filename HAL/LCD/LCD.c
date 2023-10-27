@@ -164,7 +164,7 @@ void LCD_WriteNumber(s32 num) //125
 	c8 str[20];
 	u8 i=0;
 	s8 j;
-	LCD_Clear();
+	//LCD_Clear();
 	if (num==0)
 	{
 		LCD_Clear();

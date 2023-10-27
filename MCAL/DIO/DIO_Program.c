@@ -20,7 +20,7 @@
 
 const DIO_PinStatus_type DIO_PinsStatusArr[TOTAL_PINS]={
 	INFREE,      /* Port A Pin 0 ADC0*/
-	OUTPUT,      /* Port A Pin 1 ADC1*/
+	INFREE,      /* Port A Pin 1 ADC1*/
 	OUTPUT,      /* Port A Pin 2 */
 	OUTPUT,      /* Port A Pin 3 */
 	OUTPUT,      /* Port A Pin 4 */

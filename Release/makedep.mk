@@ -16,3 +16,7 @@ MCAL\DIO\DIO_Program.c
 
 MCAL\EX_Inturrupt\EX_Intruupt.c
 
+MCAL\TIMER\TIMER.c
+
+MCAL\TIMER\TIMER_SERVICE.c
+
