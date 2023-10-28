@@ -53,6 +53,7 @@ void TIMER0_OV_InterruptDisable(void);
 void TIMER0_OC_InterruptEnable(void);
 void TIMER0_OC_InterruptDisable(void);
 void TIMER0_OV_SetCallBack(void(*local_fptr)(void));
+void Delay_Ms_Timer0_OV(u32 Time_ms);
 
 /*********************************************************************************************************/
 

@@ -4,12 +4,40 @@
  * Created: 10/27/2023 9:40:54 AM
  *  Author: DELL
  */ 
-
+#include "STD_TYPES.h"
+#include "MEM_MAP.h"
 #include "TIMER_INTERFAC.h"
 #include "TIMER_SERVICE.h"
 #include "DIO_Interface.h"
 
 static volatile u16 t1,t2,t3,flag=0;
+
+
+
+
+
+
+/****************************** timer 0 PWM************************************************************/
+
+void PWM_TIMER0_Init(void)
+{
+	TIMER0_Init(TIMER0_FASTPWM_MODE,TIMER0_SCALER_8);
+	TIMER0_OC0Mode(OC0_NON_INVERTING);
+	
+}
+void PWM_timer0_Duty(u16 duty)
+{
+	if (duty<=100)
+	{
+		u16 Ton=((u16)duty*(255+1))/100;
+		if (Ton>1)
+		{
+			OCR0=Ton-1;
+		}
+		else
+		OCR0=0;
+	}
+}
 
 /**********************************************PWM*********************************************************/
 /*void PWM_Init(void)

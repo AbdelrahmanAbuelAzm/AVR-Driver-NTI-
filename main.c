@@ -25,6 +25,9 @@ volatile u8 ADC_Flag=0,EXT_INT_flag=0,shared_flag=0,OV_Flag=0;
 
 
 
+
+
+
 int main(void)
 {
 	
@@ -32,13 +35,16 @@ int main(void)
 	u8 key='T';
 	DIO_Init();
 	LCD_Init();
-	//KEKPAD_Init();
+	KEKPAD_Init();
 	
 	//ADC_Init(VREF_AVCC,ADC_SCALER_64);
-	//ADC_Auto_Triggered_Init(ADC_TIMER0_OVERFLOW,CH_0);
 	
-	TIMER0_Init(TIMER0_NORMAL_MODE,TIMER0_SCALER_64);
-	TIMER0_OV_InterruptEnable();
+	//ADC_Auto_Triggered_Init(ADC_EXTERNAL_INTERRUPT0,CH_0);
+	
+	//TIMER0_Init(tim,TIMER0_SCALER_64);
+	PWM_TIMER0_Init();
+	
+	//TIMER0_OV_InterruptEnable();
 	
 	//EXI_TriggerEdge(EX_INT0,RISING_EDGE);
 	//EXI_Enable(EX_INT0);
@@ -46,84 +52,130 @@ int main(void)
 	GLOBAL_ENABLE();
 	
 	LCD_GoTo(0,0);
-	LCD_WriteString("Timer mode");
+	LCD_WriteString("PWM mode");
 	
 	
-    u16 num=0,disp_num=0;
+    u16 num=0,disp_num=0,ADC_Num=0,Duty=0;
 	
-	TCNT0=6;
+	//TCNT0=6;
 	//OCR0=150;
+	/*LCD_GoTo(1,0);
+	LCD_WriteString("chanel 0=");
 	
+	LCD_GoTo(2,0);
+	LCD_WriteString("PWM Ton=");*/
 	
     while (1) 
     {
 		
 		
 		
-		if(OV_Flag%1==0)
-		{
-			DIO_TogglePin(PINB7);
-		}
-		if(OV_Flag%2==0)
-		{
-			DIO_TogglePin(PINA4);
-		}
-		if(OV_Flag%5==0)
-		{
-			DIO_TogglePin(PINA5);
-		}
-		if(OV_Flag%10==0)
-		{
-			DIO_TogglePin(PINA6);
-		}
+		PWM_timer0_Duty(10);
+		delay(30);
+		PWM_timer0_Duty(100);
+		delay(60);
+		PWM_timer0_Duty(40);
+		delay(40);
+		PWM_timer0_Duty(90);
+		delay(90);
+		PWM_timer0_Duty(30);
+		delay(30);
+		PWM_timer0_Duty(100);
+		delay(100);
+		PWM_timer0_Duty(25);
+		delay(50);
+		PWM_timer0_Duty(100);
+		delay(100);
+		PWM_timer0_Duty(10);
+		delay(30);
 		
-	/*	if(ADC_Flag==1)
-		{
-			LCD_GoTo(1,0);
-			LCD_WriteString("chanel 0=");
-			LCD_WriteString("    ");
-			LCD_GoTo(1,0);
-			LCD_WriteNumber(ADC_GetRead(CH_0));
-			
-			ADC_Channel_Selection(CH_1);
-			//ADC_Flag=0;
-			//delay(100);
-		}
-		else if(ADC_Flag==2)
-		{
-			LCD_GoTo(2,0);
-			LCD_WriteString("chanel 1=");
-			LCD_WriteNumber(ADC_GetRead(CH_1));
-			ADC_Channel_Selection(CH_0);
-			
-			//ADC_Flag=0;
-			
-		}*/
+		PWM_timer0_Duty(70);
+		delay(200);
+		PWM_timer0_Duty(40);
+		delay(100);
+		PWM_timer0_Duty(100);
+		delay(250);
+		PWM_timer0_Duty(30);
+		delay(30);
+		PWM_timer0_Duty(100);
+		delay(100);
+		PWM_timer0_Duty(25);
+		delay(150);
+		PWM_timer0_Duty(100);
+		delay(200);
 		
-					
-				}
-				
-    }
-
-
-ISR(TIMER0_OV_vect)
-{
-	static u16 c=0;
-	TCNT0=6;
-	c++;
-	if(c==1000)
-	{
-		//DIO_TogglePin(PINB7);
-		OV_Flag++;
-		c=0;
-		if(OV_Flag==11)
-		{
-			OV_Flag=1;
-		}
 		
+		/*key=KEYPAD_GetKey();
+		
+		if(key != 'T')
+		{
+			if(key=='1')
+			{
+				PWM_timer0_Duty(0);
+			}
+			else if(key=='2')
+			{
+				PWM_timer0_Duty(5);
+			}
+			else if(key=='3')
+			{
+				PWM_timer0_Duty(10);
+			}
+			else if(key=='4')
+			{
+				PWM_timer0_Duty(20);
+			}
+			else if(key=='5')
+			{
+				PWM_timer0_Duty(30);
+			}
+			else if(key=='6')
+			{
+				PWM_timer0_Duty(40);
+			}
+			else if(key=='7')
+			{
+				PWM_timer0_Duty(50);
+			}
+			else if(key=='8')
+			{
+				PWM_timer0_Duty(60);
+			}
+			else if(key=='9')
+			{
+				PWM_timer0_Duty(70);
+			}
+			else if(key=='C')
+			{
+				PWM_timer0_Duty(80);
+			}
+			else if(key=='0')
+			{
+				PWM_timer0_Duty(90);
+			}
+			else if(key=='=')
+			{
+				PWM_timer0_Duty(100);
+			}
+			//;
+			
+		}
+		else{
+			
+			//PWM_timer0_Duty(0);
+		    }
+		*/
+		
+		
+		
+		
+			
 	}
-	
-}
+				
+ }
+
+
+
 
 /*
 ISR(TIMER0_OC_vect)
@@ -136,22 +188,12 @@ ISR(TIMER0_OC_vect)
 ISR(ADC_vect)
 {
 	
+	ADC_Flag=1;
 	
-	if(shared_flag==1)
-	{
-		DIO_TogglePin(PINB5);
-		shared_flag=0;
-		ADC_Flag++;
-		if(ADC_Flag==3)
-		{
-			ADC_Flag=0;
-		}
-		
-	}
 	
 	
 }
-/*
+
 ISR(INT0_vect)
 {
 	EXT_INT_flag++;
@@ -164,4 +206,3 @@ ISR(INT0_vect)
 	
 	
 }
-*/

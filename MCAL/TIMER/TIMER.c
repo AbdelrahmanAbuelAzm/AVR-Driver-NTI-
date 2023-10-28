@@ -11,6 +11,10 @@
 #include "TIMER_INTERFAC.h"
 #include "TIMER_SERVICE.h"
 
+/**************************** timer0 delay variable********************************/
+
+volatile u32 Delay_var_ms=0;
+volatile u8 Delay_flag=1;
 
 /*************************Pointer to functions to be assigned to ISR*********************************/
 
@@ -267,3 +271,24 @@ ISR(TIMER1_ICU_vect)
 		Timer1_ICU_Fptr();
 	}
 }
+
+
+void Delay_Ms_Timer0_OV(u32 Time_ms)
+{
+	Delay_var_ms=Time_ms;
+	while(Delay_flag);
+	Delay_flag=1;
+}
+ISR(TIMER0_OV_vect)
+{
+	static u32 c=0;
+	TCNT0=6;
+	c++;
+	if(c==Delay_var_ms)
+	{
+		Delay_flag=0;
+		c=0;
+	}
+	
+}
+

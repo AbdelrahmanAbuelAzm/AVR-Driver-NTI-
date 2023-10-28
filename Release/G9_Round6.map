@@ -1,7 +1,5 @@
 Archive member included to satisfy reference by file (symbol)
 
-c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
-                              main.o (__udivmodqi4)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
                               HAL/7_Segment/7_SEGMENT.o (__udivmodhi4)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
@@ -41,13 +39,10 @@ Discarded input sections
  .text          0x00000000        0x0 HAL/KeyBad/KEYBAD.o
  .data          0x00000000        0x0 HAL/KeyBad/KEYBAD.o
  .bss           0x00000000        0x0 HAL/KeyBad/KEYBAD.o
- .text.KEKPAD_Init
-                0x00000000       0x16 HAL/KeyBad/KEYBAD.o
  .text.KEYPAD_GetKey
                 0x00000000       0xa4 HAL/KeyBad/KEYBAD.o
  .rodata.KeysArr
                 0x00000000       0x10 HAL/KeyBad/KEYBAD.o
- .comment       0x00000000       0x31 HAL/KeyBad/KEYBAD.o
  .text          0x00000000        0x0 HAL/LCD/LCD.o
  .data          0x00000000        0x0 HAL/LCD/LCD.o
  .bss           0x00000000        0x0 HAL/LCD/LCD.o
@@ -83,7 +78,8 @@ Discarded input sections
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
- .bss.EXT_INT_flag
+ .bss.OV_Flag   0x00000000        0x1 main.o
+ .bss.shared_flag
                 0x00000000        0x1 main.o
  .text          0x00000000        0x0 MCAL/ADC/ADC.o
  .data          0x00000000        0x0 MCAL/ADC/ADC.o
@@ -142,8 +138,8 @@ Discarded input sections
  .text          0x00000000        0x0 MCAL/TIMER/TIMER.o
  .data          0x00000000        0x0 MCAL/TIMER/TIMER.o
  .bss           0x00000000        0x0 MCAL/TIMER/TIMER.o
- .text.TIMER0_OC0Mode
-                0x00000000       0x36 MCAL/TIMER/TIMER.o
+ .text.TIMER0_OV_InterruptEnable
+                0x00000000        0x8 MCAL/TIMER/TIMER.o
  .text.TIMER0_OV_InterruptDisable
                 0x00000000        0x8 MCAL/TIMER/TIMER.o
  .text.TIMER0_OC_InterruptEnable
@@ -182,6 +178,8 @@ Discarded input sections
                 0x00000000        0xa MCAL/TIMER/TIMER.o
  .text.Timer1_ICU_SetCallBack
                 0x00000000        0xa MCAL/TIMER/TIMER.o
+ .text.Delay_Ms_Timer0_OV
+                0x00000000       0x20 MCAL/TIMER/TIMER.o
  .text          0x00000000        0x0 MCAL/TIMER/TIMER_SERVICE.o
  .data          0x00000000        0x0 MCAL/TIMER/TIMER_SERVICE.o
  .bss           0x00000000        0x0 MCAL/TIMER/TIMER_SERVICE.o
@@ -205,7 +203,7 @@ Discarded input sections
                 0x00000000      0x102 MCAL/TIMER/TIMER_SERVICE.o
  .text.Timer1_SetInterruptTime_s
                 0x00000000       0x5e MCAL/TIMER/TIMER_SERVICE.o
- .bss.c.2040    0x00000000        0x4 MCAL/TIMER/TIMER_SERVICE.o
+ .bss.c.2053    0x00000000        0x4 MCAL/TIMER/TIMER_SERVICE.o
  .bss.fptr_timer
                 0x00000000        0x2 MCAL/TIMER/TIMER_SERVICE.o
  .bss.NofOverFlow
@@ -214,28 +212,11 @@ Discarded input sections
  .bss.t3        0x00000000        0x2 MCAL/TIMER/TIMER_SERVICE.o
  .bss.t2        0x00000000        0x2 MCAL/TIMER/TIMER_SERVICE.o
  .bss.t1        0x00000000        0x2 MCAL/TIMER/TIMER_SERVICE.o
- .comment       0x00000000       0x31 MCAL/TIMER/TIMER_SERVICE.o
- .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .text.libgcc.mul
-                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .text.libgcc.prologue
-                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .text.libgcc.builtins
-                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .text.libgcc.fmul
-                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
- .text.libgcc.fixed
-                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
  .text.libgcc.mul
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text.libgcc.div
-                0x00000000       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
  .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
  .text.libgcc.prologue
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
@@ -523,7 +504,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x8f6
+.text           0x00000000      0xb10
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -582,7 +563,6 @@ END GROUP
  *(.init9)
  *(.text)
  .text          0x0000008e        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
-                0x0000008e                __vector_1
                 0x0000008e                __vector_12
                 0x0000008e                __bad_interrupt
                 0x0000008e                __vector_13
@@ -598,67 +578,79 @@ END GROUP
                 0x0000008e                __vector_20
                 0x00000092                . = ALIGN (0x2)
  *(.text.*)
+ .text.KEKPAD_Init
+                0x00000092       0x16 HAL/KeyBad/KEYBAD.o
+                0x00000092                KEKPAD_Init
  .text.WriteInst
-                0x00000092       0xc0 HAL/LCD/LCD.o
+                0x000000a8       0xc0 HAL/LCD/LCD.o
  .text.LCD_Init
-                0x00000152       0x3c HAL/LCD/LCD.o
-                0x00000152                LCD_Init
+                0x00000168       0x3c HAL/LCD/LCD.o
+                0x00000168                LCD_Init
  .text.WriteData
-                0x0000018e       0xc0 HAL/LCD/LCD.o
-                0x0000018e                WriteData
+                0x000001a4       0xc0 HAL/LCD/LCD.o
+                0x000001a4                WriteData
  .text.LCD_GoTo
-                0x0000024e       0x28 HAL/LCD/LCD.o
-                0x0000024e                LCD_GoTo
+                0x00000264       0x28 HAL/LCD/LCD.o
+                0x00000264                LCD_GoTo
  .text.LCD_WriteString
-                0x00000276       0x26 HAL/LCD/LCD.o
-                0x00000276                LCD_WriteString
+                0x0000028c       0x26 HAL/LCD/LCD.o
+                0x0000028c                LCD_WriteString
  .text.startup.main
-                0x0000029c       0x70 main.o
-                0x0000029c                main
- .text.__vector_11
-                0x0000030c       0x5c main.o
-                0x0000030c                __vector_11
+                0x000002b2      0x1c4 main.o
+                0x000002b2                main
  .text.__vector_16
-                0x00000368       0x6c main.o
-                0x00000368                __vector_16
+                0x00000476       0x1e main.o
+                0x00000476                __vector_16
+ .text.__vector_1
+                0x00000494       0x60 main.o
+                0x00000494                __vector_1
  .text.DIO_Init
-                0x000003d4      0x1bc MCAL/DIO/DIO_Program.o
-                0x000003d4                DIO_Init
+                0x000004f4      0x1bc MCAL/DIO/DIO_Program.o
+                0x000004f4                DIO_Init
  .text.DIO_WritePin
-                0x00000590       0xfe MCAL/DIO/DIO_Program.o
-                0x00000590                DIO_WritePin
+                0x000006b0       0xfe MCAL/DIO/DIO_Program.o
+                0x000006b0                DIO_WritePin
  .text.DIO_TogglePin
-                0x0000068e       0x6a MCAL/DIO/DIO_Program.o
-                0x0000068e                DIO_TogglePin
+                0x000007ae       0x6a MCAL/DIO/DIO_Program.o
+                0x000007ae                DIO_TogglePin
  .text.__vector_3
-                0x000006f8       0x52 MCAL/EX_Inturrupt/EX_Intruupt.o
-                0x000006f8                __vector_3
+                0x00000818       0x52 MCAL/EX_Inturrupt/EX_Intruupt.o
+                0x00000818                __vector_3
  .text.TIMER0_Init
-                0x0000074a       0x40 MCAL/TIMER/TIMER.o
-                0x0000074a                TIMER0_Init
- .text.TIMER0_OV_InterruptEnable
-                0x0000078a        0x8 MCAL/TIMER/TIMER.o
-                0x0000078a                TIMER0_OV_InterruptEnable
+                0x0000086a       0x40 MCAL/TIMER/TIMER.o
+                0x0000086a                TIMER0_Init
+ .text.TIMER0_OC0Mode
+                0x000008aa       0x36 MCAL/TIMER/TIMER.o
+                0x000008aa                TIMER0_OC0Mode
  .text.__vector_9
-                0x00000792       0x52 MCAL/TIMER/TIMER.o
-                0x00000792                __vector_9
+                0x000008e0       0x52 MCAL/TIMER/TIMER.o
+                0x000008e0                __vector_9
  .text.__vector_7
-                0x000007e4       0x52 MCAL/TIMER/TIMER.o
-                0x000007e4                __vector_7
+                0x00000932       0x52 MCAL/TIMER/TIMER.o
+                0x00000932                __vector_7
  .text.__vector_8
-                0x00000836       0x52 MCAL/TIMER/TIMER.o
-                0x00000836                __vector_8
+                0x00000984       0x52 MCAL/TIMER/TIMER.o
+                0x00000984                __vector_8
  .text.__vector_6
-                0x00000888       0x52 MCAL/TIMER/TIMER.o
-                0x00000888                __vector_6
+                0x000009d6       0x52 MCAL/TIMER/TIMER.o
+                0x000009d6                __vector_6
+ .text.__vector_11
+                0x00000a28       0x8c MCAL/TIMER/TIMER.o
+                0x00000a28                __vector_11
+ .text.PWM_TIMER0_Init
+                0x00000ab4        0xe MCAL/TIMER/TIMER_SERVICE.o
+                0x00000ab4                PWM_TIMER0_Init
+ .text.PWM_timer0_Duty
+                0x00000ac2       0x22 MCAL/TIMER/TIMER_SERVICE.o
+                0x00000ac2                PWM_timer0_Duty
  .text.libgcc.div
-                0x000008da       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
-                0x000008da                __udivmodqi4
-                0x000008f2                . = ALIGN (0x2)
+                0x00000ae4       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000ae4                __udivmodhi4
+                0x00000b0c                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000008f2        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x000008f2                _exit
-                0x000008f2                exit
+ .fini9         0x00000b0c        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000b0c                _exit
+                0x00000b0c                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -677,60 +669,63 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000008f2        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000b0c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000008f6                _etext = .
+                0x00000b10                _etext = .
 
-.data           0x00800060       0x2c load address 0x000008f6
+.data           0x00800060       0x2a load address 0x00000b10
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
+ .data.Delay_flag
+                0x00800060        0x1 MCAL/TIMER/TIMER.o
+                0x00800060                Delay_flag
  *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x00800060        0xb main.o
+                0x00800061        0x9 main.o
  .rodata.DIO_PinsStatusArr
-                0x0080006b       0x20 MCAL/DIO/DIO_Program.o
-                0x0080006b                DIO_PinsStatusArr
+                0x0080006a       0x20 MCAL/DIO/DIO_Program.o
+                0x0080006a                DIO_PinsStatusArr
  *(.gnu.linkonce.r*)
-                0x0080008c                . = ALIGN (0x2)
- *fill*         0x0080008b        0x1 
-                0x0080008c                _edata = .
-                0x0080008c                PROVIDE (__data_end, .)
+                0x0080008a                . = ALIGN (0x2)
+                0x0080008a                _edata = .
+                0x0080008a                PROVIDE (__data_end, .)
 
-.bss            0x0080008c        0xf
-                0x0080008c                PROVIDE (__bss_start, .)
+.bss            0x0080008a       0x14
+                0x0080008a                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.c.2103    0x0080008c        0x2 main.o
- .bss.OV_Flag   0x0080008e        0x1 main.o
-                0x0080008e                OV_Flag
- .bss.shared_flag
-                0x0080008f        0x1 main.o
-                0x0080008f                shared_flag
- .bss.ADC_Flag  0x00800090        0x1 main.o
-                0x00800090                ADC_Flag
+ .bss.EXT_INT_flag
+                0x0080008a        0x1 main.o
+                0x0080008a                EXT_INT_flag
+ .bss.ADC_Flag  0x0080008b        0x1 main.o
+                0x0080008b                ADC_Flag
  .bss.INT2_Fptr
-                0x00800091        0x2 MCAL/EX_Inturrupt/EX_Intruupt.o
+                0x0080008c        0x2 MCAL/EX_Inturrupt/EX_Intruupt.o
+ .bss.c.2014    0x0080008e        0x4 MCAL/TIMER/TIMER.o
  .bss.Timer1_ICU_Fptr
-                0x00800093        0x2 MCAL/TIMER/TIMER.o
+                0x00800092        0x2 MCAL/TIMER/TIMER.o
  .bss.Timer1_OCB_Fptr
-                0x00800095        0x2 MCAL/TIMER/TIMER.o
+                0x00800094        0x2 MCAL/TIMER/TIMER.o
  .bss.Timer1_OCA_Fptr
-                0x00800097        0x2 MCAL/TIMER/TIMER.o
+                0x00800096        0x2 MCAL/TIMER/TIMER.o
  .bss.Timer1_OVF_Fptr
-                0x00800099        0x2 MCAL/TIMER/TIMER.o
+                0x00800098        0x2 MCAL/TIMER/TIMER.o
+ .bss.Delay_var_ms
+                0x0080009a        0x4 MCAL/TIMER/TIMER.o
+                0x0080009a                Delay_var_ms
  *(COMMON)
-                0x0080009b                PROVIDE (__bss_end, .)
-                0x000008f6                __data_load_start = LOADADDR (.data)
-                0x00000922                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0080009e                PROVIDE (__bss_end, .)
+                0x00000b10                __data_load_start = LOADADDR (.data)
+                0x00000b3a                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080009b        0x0
+.noinit         0x0080009e        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x0080009b                _end = .
+                0x0080009e                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -772,12 +767,14 @@ END GROUP
 
 .comment        0x00000000       0x30
  *(.comment)
- .comment       0x00000000       0x30 HAL/LCD/LCD.o
+ .comment       0x00000000       0x30 HAL/KeyBad/KEYBAD.o
                                  0x31 (size before relaxing)
+ .comment       0x00000030       0x31 HAL/LCD/LCD.o
  .comment       0x00000030       0x31 main.o
  .comment       0x00000030       0x31 MCAL/DIO/DIO_Program.o
  .comment       0x00000030       0x31 MCAL/EX_Inturrupt/EX_Intruupt.o
  .comment       0x00000030       0x31 MCAL/TIMER/TIMER.o
+ .comment       0x00000030       0x31 MCAL/TIMER/TIMER_SERVICE.o
 
 .note.gnu.avr.deviceinfo
                 0x00000000       0x3c

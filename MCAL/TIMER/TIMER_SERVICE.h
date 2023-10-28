@@ -30,6 +30,12 @@ void PWM_Measure(u32* Pfreq,u8* Pduty,u32 timeout);
 void PWM_Measure2(u32* Pfreq,u8* Pduty);
 
 
+/********* Timer0 interface ***********/
+
+void PWM_TIMER0_Init(void);
+void PWM_timer0_Duty(u16 duty);
+
+
 
 
 
