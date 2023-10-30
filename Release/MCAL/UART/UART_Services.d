@@ -1,0 +1,12 @@
+MCAL/UART/UART_Services.d MCAL/UART/UART_Services.o: \
+ ../MCAL/UART/UART_Services.c ../STD_TYPES.h \
+ ../MCAL/UART/UART_INTERFACE.h ../MCAL/UART/UART_Services.h \
+ ../HAL/LCD/LCD_INTERFACE.h
+
+../STD_TYPES.h:
+
+../MCAL/UART/UART_INTERFACE.h:
+
+../MCAL/UART/UART_Services.h:
+
+../HAL/LCD/LCD_INTERFACE.h:
